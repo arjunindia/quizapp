@@ -7,10 +7,21 @@ import {
     Button,
     Box,
   } from "@chakra-ui/react";
-  import {Link} from "react-router-dom"
-export default function Intro(){
+  import { useState, useEffect } from "react";
+  import { Link } from "react-router-dom";
+  export default function Intro() {
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [enabled, setEnabled] = useState(false);
+    useEffect(() => {
+      if (name.trim() !== "" && email.trim() !== "") {
+        setEnabled(true);
+      } else {
+        setEnabled(false);
+      }
+    }, [name, email]);
     return (
-        <Box
+      <Box
         maxW={600}
         minH={"100vh"}
         mx={"auto"}
@@ -26,8 +37,12 @@ export default function Intro(){
             size={`lg`}
             shadow={"sm"}
             placeholder={"Enter your name here..."}
+            onChange={(e) => {
+              setName(e.target.value);
+            }}
           />
-
+        </FormControl>
+        <FormControl>
           <FormLabel>Email address</FormLabel>
           <Input
             type="email"
@@ -35,13 +50,23 @@ export default function Intro(){
             size={`lg`}
             shadow={"sm"}
             placeholder={"Enter your email here..."}
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
           />
-          <Box w={"100%"} display={"flex"} justifyContent={"flex-end"}>
-          <Link to="/quiz">
-            <Button colorScheme={"teal"}>Continue to quiz</Button>
-          </Link>
-          </Box>
         </FormControl>
+        <Box
+          w={"100%"}
+          display={"flex"}
+          justifyContent={"flex-end"}
+          pointerEvents={!enabled && "none"}
+        >
+          <Link to="/quiz">
+            <Button colorScheme={enabled ? "teal" : "gray"}>
+              Continue to quiz
+            </Button>
+          </Link>
+        </Box>
       </Box>
-    )
-}
+    );
+  }
