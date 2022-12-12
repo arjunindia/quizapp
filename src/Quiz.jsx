@@ -10,12 +10,14 @@ import {
   FormErrorMessage,
   FormHelperText,
 } from "@chakra-ui/react";
-import { useState,useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 export default function Quiz() {
   const [value, setValue] = useState([]);
-    const [questions, setQuestions] = useState([]);
-    const [isError,setIsError] = useState(false);
+  const [questions, setQuestions] = useState([]);
+  const [isError, setIsError] = useState(false);
+  const navigate = useNavigate();
   function setIndex(index, value) {
     setValue((prev) => {
       const arr = [...prev];
@@ -24,52 +26,57 @@ export default function Quiz() {
     });
   }
   useEffect(() => {
+    if (
+      localStorage.getItem("name") === null ||
+      localStorage.getItem("email") === null
+    ) {
+      navigate("/");
+    }
     fetch("./quiz.json").then((res) => {
-        res.json().then((data) => {
-            setQuestions(data);
-        });
+      res.json().then((data) => {
+        setQuestions(data);
+      });
     });
   }, []);
   return (
-      <Box
+    <Box
       w={"80vw"}
-        maxW={600}
-        minH={"100vh"}
-        mx={"auto"}
-        display={"flex"}
-        flexDirection={"column"}
-        justifyContent={"center"}
-        alignItems={"start"}
+      maxW={600}
+      minH={"100vh"}
+      mx={"auto"}
+      display={"flex"}
+      flexDirection={"column"}
+      justifyContent={"center"}
+      alignItems={"start"}
+    >
+      {questions.map((val, index) => (
+        <Choice
+          key={index}
+          question={val.question}
+          index={index}
+          value={value}
+          setIndex={setIndex}
+          options={val.options}
+          isError={isError && value[index] === undefined}
+        />
+      ))}
+
+      <Button
+        colorScheme={"teal"}
+        alignSelf="flex-end"
+        my="20px"
+        onClick={() => {
+          if (value.length !== questions.length || value.includes(undefined)) {
+            setIsError(true);
+          } else {
+            setIsError(false);
+          }
+          console.log(value);
+        }}
       >
-        {questions.map((val, index) => (
-          <Choice
-            key={index}
-            question={val.question}
-            index={index}
-            value={value}
-            setIndex={setIndex}
-            options={val.options}
-            isError={isError&&value[index]===undefined}
-          />
-        ))}
-        
-        <Button
-          colorScheme={"teal"}
-          alignSelf="flex-end"
-          my="20px"
-          onClick={() => {
-            if(value.length !== questions.length|| value.includes(undefined)){
-                setIsError(true);
-            }
-            else{
-                setIsError(false);
-            }
-            console.log(value);
-          }}
-        >
-          Submit
-        </Button>
-      </Box>
+        Submit
+      </Button>
+    </Box>
   );
 }
 

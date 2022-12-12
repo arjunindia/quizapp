@@ -16,6 +16,8 @@ import {
     useEffect(() => {
       if (name.trim() !== "" && email.trim() !== "") {
         setEnabled(true);
+        localStorage.setItem("name", name);
+        localStorage.setItem("email", email);
       } else {
         setEnabled(false);
       }
