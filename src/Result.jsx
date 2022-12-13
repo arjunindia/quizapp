@@ -46,7 +46,7 @@ export default function result() {
   }
 
   useEffect(() => {
-    handleEmail();
+    Number(localStorage.getItem("marks")) > 3 && handleEmail();
   });
   return (
     <Box
