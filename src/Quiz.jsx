@@ -68,8 +68,18 @@ export default function Quiz() {
         onClick={() => {
           if (value.length !== questions.length || value.includes(undefined)) {
             setIsError(true);
+
+            return;
           } else {
             setIsError(false);
+            let marks = 0;
+            value.forEach((val, index) => {
+              if (val === questions[index].answer) {
+                marks++;
+              }
+            });
+            localStorage.setItem("marks", marks);
+            navigate("/result");
           }
           console.log(value);
         }}

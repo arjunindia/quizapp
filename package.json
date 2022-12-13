@@ -11,6 +11,7 @@
   "dependencies": {
     "@babel/core": ">=7.0.0 <8.0.0",
     "@chakra-ui/react": "^2.4.3",
+    "@emailjs/browser": "^3.10.0",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "framer-motion": "^7.7.0",

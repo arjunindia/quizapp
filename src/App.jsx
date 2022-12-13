@@ -9,6 +9,7 @@ import {
 import Intro from "./Intro";
 import ErrorPage from "./ErrorPage";
 import Quiz from "./Quiz";
+import Result from "./Result";
 
 function StartPage() {
   const [count, setCount] = useState(0);
@@ -28,12 +29,16 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Intro />,  
+        element: <Intro />,
       },
       {
         path: "/quiz",
         element: <Quiz />,
-      }
+      },
+      {
+        path: "/result",
+        element: <Result />,
+      },
     ],
   },
 ]);
