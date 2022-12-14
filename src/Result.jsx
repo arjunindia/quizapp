@@ -44,6 +44,12 @@ export default function result() {
   }
 
   useEffect(() => {
+    if (
+      localStorage.getItem("name") === null ||
+      localStorage.getItem("email") === null
+    ) {
+      navigate("/");
+    }
     Number(localStorage.getItem("marks")) > 4 && handleEmail();
   });
   return (
