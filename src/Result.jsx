@@ -29,24 +29,22 @@ export default function result() {
           message: data.url,
           reply: localStorage.getItem("email"),
         };
-
-        Number(localStorage.getItem("marks")) > 3 &&
-          emailjs
-            .send("service_0nm3ebm", "template_p7rv1ex", templateParams)
-            .then(
-              function (response) {
-                console.log("SUCCESS!", response.status, response.text);
-              },
-              function (error) {
-                console.log("FAILED...", error);
-              }
-            );
+        emailjs
+          .send("service_0nm3ebm", "template_p7rv1ex", templateParams)
+          .then(
+            function (response) {
+              console.log("SUCCESS!", response.status, response.text);
+            },
+            function (error) {
+              console.log("FAILED...", error);
+            }
+          );
       });
     });
   }
 
   useEffect(() => {
-    Number(localStorage.getItem("marks")) > 3 && handleEmail();
+    Number(localStorage.getItem("marks")) > 4 && handleEmail();
   });
   return (
     <Box
@@ -58,11 +56,11 @@ export default function result() {
     >
       <Text fontSize="2xl">Result</Text>
       <Text fontSize="xl">Your score is: {localStorage.getItem("marks")}</Text>
-      {Number(localStorage.getItem("marks")) > 3 ? (
+      {Number(localStorage.getItem("marks")) > 4 ? (
         <Text fontSize="xl">Check your email for the certificate!</Text>
       ) : (
         <Text fontSize="xl">
-          You need to score more than 3 to get the certificate!
+          You need to score at least 5 marks to get the certificate!
         </Text>
       )}
     </Box>

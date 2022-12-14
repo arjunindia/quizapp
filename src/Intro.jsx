@@ -25,6 +25,7 @@ import {
     return (
       <Box
         maxW={600}
+        w={"90vw"}
         minH={"100vh"}
         mx={"auto"}
         display={"flex"}
@@ -52,6 +53,7 @@ import {
             size={`lg`}
             shadow={"sm"}
             placeholder={"Enter your email here..."}
+            autoComplete={"email"}
             onChange={(e) => {
               setEmail(e.target.value);
             }}

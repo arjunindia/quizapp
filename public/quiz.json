@@ -1,62 +1,92 @@
 [
-    {
-        "id":1,
-        "question":"What is the capital of India?",
-        "options":["Delhi","Mumbai","Kolkata","Chennai"],
-        "answer":"1"
-    },
-    {
-        "id":2,
-        "question":"What is the capital of USA?",
-        "options":["New York","Washington DC","Los Angeles","Chicago"],
-        "answer":"2"
-    },
-    {
-        "id":3,
-        "question":"What is the capital of Australia?",
-        "options":["Sydney","Melbourne","Canberra","Brisbane"],
-        "answer":"3"
-    },
-    {
-        "id":4,
-        "question":"What is the capital of Canada?",
-        "options":["Toronto","Vancouver","Ottawa","Montreal"],
-        "answer":"3"
-    },
-    {
-        "id":5,
-        "question":"What is the capital of China?",
-        "options":["Beijing","Shanghai","Hong Kong","Shenzhen"],
-        "answer":"1"
-    },
-    {
-        "id":6,
-        "question":"What is the capital of Japan?",
-        "options":["Tokyo","Kyoto","Osaka","Nagoya"],
-        "answer":"1"
-    },
-    {
-        "id":7,
-        "question":"What is the capital of Russia?",
-        "options":["Moscow","Saint Petersburg","Novosibirsk","Yekaterinburg"],
-        "answer":"1"
-    },
-    {
-        "id":8,
-        "question":"What is the capital of Brazil?",
-        "options":["Rio de Janeiro","Sao Paulo","Brasilia","Salvador"],
-        "answer":"3"
-    },
-    {
-        "id":9,
-        "question":"What is the capital of Mexico?",
-        "options":["Mexico City","Guadalajara","Monterrey","Tijuana"],
-        "answer":"1"
-    },
-    {
-        "id":10,
-        "question":"What is the capital of France?",
-        "options":["Paris","Lyon","Marseille","Toulouse"],
-        "answer":"1"
-    }
+  {
+    "id": 1,
+    "question": "What is Drug Addiction?",
+    "options": [
+      "Addiction to Food",
+      "Dependence on Drugs",
+      "Taking medicines with valid medical prescriptions",
+      "Not eating a balanced diet"
+    ],
+    "answer": "2"
+  },
+  {
+    "id": 2,
+    "question": "In which age group, Drug addiction is a major problem?",
+    "options": ["Childhood", "Adolescence", "Adulthood", "Old Age"],
+    "answer": "2"
+  },
+  {
+    "id": 3,
+    "question": "When is International Day Against Drug Abuse celebrated?",
+    "options": ["26th June", "12th August", "14th September", "1st December"],
+    "answer": "1"
+  },
+  {
+    "id": 4,
+    "question": "Which of the following is not a symptom of mental illness?",
+    "options": [
+      "Insomnia",
+      "Depression",
+      "Positive attitude",
+      "Delusions and hallucinations"
+    ],
+    "answer": "3"
+  },
+  {
+    "id": 5,
+    "question": "Legally Drug Abuse is the intake of drugs with valid medical prescriptions and for Medical purposes.",
+    "options": ["True", "False"],
+    "answer": "2"
+  },
+  {
+    "id": 6,
+    "question": "Which of the following was a major reason for the development of Drugs?",
+    "options": [
+      "For clinical purposes",
+      "To experience hallucinations",
+      "Adventure",
+      "For curiosity"
+    ],
+    "answer": "1"
+  },
+  {
+    "id": 7,
+    "question": "Which of the following is not a common reason for Drug Abuse or Drug Dependence?",
+    "options": [
+      "Peer Pressure",
+      "Adventure",
+      "A feeling of Excitement and Euphoria",
+      "For death"
+    ],
+    "answer": "4"
+  },
+  {
+    "id": 8,
+    "question": "Alcohol abuse is greatest among which of these age groups?",
+    "options": [
+      "15- to 17-year-olds",
+      "18- to 29-year-olds",
+      "30- to 54-year-olds",
+      "55 and older"
+    ],
+    "answer": "2"
+  },
+  {
+    "id": 9,
+    "question": "Alcohol-use disorder increases your risk for:",
+    "options": ["Cancer", "Pancreatitis", "Liver damage"],
+    "answer": "3"
+  },
+  {
+    "id": 10,
+    "question": "Which of the following is an important factor in substance abuse?",
+    "options": [
+      "Whether the substances are regularly used by other family members",
+      "Whether the family environment is rural or urban",
+      "Whether you are a twin",
+      "Whether you are born in the winter"
+    ],
+    "answer": "1"
+  }
 ]

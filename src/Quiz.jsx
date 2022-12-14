@@ -92,32 +92,30 @@ export default function Quiz() {
 
 function Choice({ question, index, value, setIndex,options,isError }) {
   return (
-    
     <FormControl isInvalid={isError}>
-    <Box py={"20px"} mx="10px">
-      <Text fontSize="2xl" mb={"10px"}>
-        {question}
-      </Text>
-      <RadioGroup
-        onChange={(val) => setIndex(index, val)}
-        value={value[index]}
-        py={"10px"}
-      >
-        <Stack direction={["column","row"]} justifyContent={"space-between"}>
-          {/* <Radio value="1">First</Radio>
+      <Box py={"20px"} mx="10px">
+        <Text fontSize="2xl" mb={"10px"}>
+          {question}
+        </Text>
+        <RadioGroup
+          onChange={(val) => setIndex(index, val)}
+          value={value[index]}
+          py={"10px"}
+        >
+          <Stack direction={["column"]} justifyContent={"space-between"}>
+            {/* <Radio value="1">First</Radio>
           <Radio value="2">Second</Radio>
           <Radio value="3">Third</Radio> */}
             {options.map((val, index) => (
-                <Radio key={index} value={`${index+1}`}>
-                    {val}
-                </Radio>
+              <Radio key={index} value={`${index + 1}`}>
+                {val}
+              </Radio>
             ))}
-        </Stack>
-      </RadioGroup>
-      
-      <FormErrorMessage>Please answer all questions!</FormErrorMessage>
-    </Box>
-    
+          </Stack>
+        </RadioGroup>
+
+        <FormErrorMessage>Please answer all questions!</FormErrorMessage>
+      </Box>
     </FormControl>
   );
 }
