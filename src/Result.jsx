@@ -57,7 +57,6 @@ export default function result() {
       <Text fontSize="xl">Your score is: {localStorage.getItem("marks")}</Text>
         {Number(localStorage.getItem("marks")) > 4 ? (<>
           <Text fontSize="xl" maxW="600px" w="90vw" textAlign="center">Check your email for the certificate!</Text>
-          <Text maxW="600px" w="90vw" textAlign="center">(Make sure you claim your certificates ASAP since they expire in an hour!)</Text>
         </>
       ) : (
         <Text fontSize="xl">
