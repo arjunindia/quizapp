@@ -42,7 +42,7 @@ export default function result() {
     }
     if (Number(localStorage.getItem("marks")) > 4) {
       if (isApiSubscribed) {
-        handleEmail(abortController);
+        handleEmail();
       }
     } else {
       setLoaded(true);
