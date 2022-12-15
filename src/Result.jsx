@@ -11,7 +11,7 @@ export default function result() {
     });
   }
   
-  function handleEmail(aborter) {
+  function handleEmail() {
         emailjs.init("AkMBUDYW6-dVuoScV");
         var templateParams = {
           name: localStorage.getItem("name"),
@@ -32,16 +32,23 @@ export default function result() {
   }
 
   useEffect(() => {
-    const abortController = new AbortController();
+    let isApiSubscribed = true;
+
     if (
       localStorage.getItem("name") === null ||
       localStorage.getItem("email") === null
     ) {
       navigate("/");
     }
-    Number(localStorage.getItem("marks")) > 4 && handleEmail(abortController);
+    if (Number(localStorage.getItem("marks")) > 4) {
+      if (isApiSubscribed) {
+        handleEmail(abortController);
+      }
+    } else {
+      setLoaded(true);
+    }
     return () => {
-      abortController.abort();
+      isApiSubscribed = false;
     }
   },[]);
   return (
