@@ -1,0 +1,40 @@
+fetch("https://api.pdf.co/v1/pdf/convert/from/html", {
+      signal: aborter.signal,
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+
+        // * Get your own by registering at https://app.pdf.co/documentation/api
+        "x-api-key":
+          "arjun8107@gmail.com_d4a7ffa28f8ba1685ce8c47dadc41cf8bc60f2a72efa9f068ec0bd7aa1c12cdf0d6941d2",
+      },
+      body: JSON.stringify({
+        templateId: "777",
+        name: "certificate.pdf",
+        orientation: "Landscape",
+        templateData: JSON.stringify({
+          name: localStorage.getItem("name"),
+          marks: localStorage.getItem("marks"),
+        }),
+      }),
+    }).then((response) => {
+      response.json().then((data) => {
+        emailjs.init("AkMBUDYW6-dVuoScV");
+        var templateParams = {
+          name: localStorage.getItem("name"),
+          message: data.url,
+          reply: localStorage.getItem("email"),
+        };
+        emailjs
+          .send("service_0nm3ebm", "template_p7rv1ex", templateParams)
+          .then(
+            function (response) {
+              console.log("SUCCESS!", response.status, response.text);
+              setLoaded(true);
+            },
+            function (error) {
+              console.log("FAILED...", error);
+            }
+          );
+      });
+    });

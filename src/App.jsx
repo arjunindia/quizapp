@@ -10,6 +10,7 @@ import Intro from "./Intro";
 import ErrorPage from "./ErrorPage";
 import Quiz from "./Quiz";
 import Result from "./Result";
+import Pdf from "./Pdf"
 
 function StartPage() {
   const [count, setCount] = useState(0);
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: "/result",
         element: <Result />,
+      },
+      {
+        path:"/Pdf",
+        element: <Pdf />,
       },
     ],
   },
