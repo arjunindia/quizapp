@@ -12,14 +12,14 @@ export default function result() {
   }
   
   function handleEmail() {
-        emailjs.init("AkMBUDYW6-dVuoScV");
+        emailjs.init("QNlZXxQmXtYkYEXaa");
         var templateParams = {
           name: localStorage.getItem("name"),
           message: `${window.location.origin}/Pdf?name=${localStorage.getItem("name")}&marks=${localStorage.getItem("marks")}`,
           reply: localStorage.getItem("email"),
         };
         emailjs
-          .send("service_0nm3ebm", "template_p7rv1ex", templateParams)
+          .send("service_6g1oyon", "template_xm6brfq", templateParams)
           .then(
             function (response) {
               console.log("SUCCESS!", response.status, response.text);
