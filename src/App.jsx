@@ -11,6 +11,7 @@ import ErrorPage from "./ErrorPage";
 import Quiz from "./Quiz";
 import Result from "./Result";
 import Pdf from "./Pdf"
+import Home from "./Home";
 
 function StartPage() {
   const [count, setCount] = useState(0);
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/start",
         element: <Intro />,
       },
       {
