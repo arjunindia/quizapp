@@ -77,15 +77,15 @@ export default function Home() {
                                 </div>
                                 <div className={`menu-top-container ${toggle ? "wow" : ""}`} ref={ref}>
                                     <ul id="primary-menu" className="menu"><li id="menu-item-64" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-64"><a href="https://vimukthi.kerala.gov.in/">Home</a></li>
-                                        <li id="menu-item-512" className="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-512"><a href="index.html#">About Us</a>
+                                        <li id="menu-item-512" className="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-512"><a href="#">About Us</a>
                                             <ul className="sub-menu">
-                                                <li id="menu-item-550" className="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-548 current_page_item menu-item-550"><a href="index.html" aria-current="page">About Vimukthi</a></li>
+                                                <li id="menu-item-550" className="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-548 current_page_item menu-item-550"><a href="#" aria-current="page">About Vimukthi</a></li>
                                                 <li id="menu-item-431" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-431"><a href="https://vimukthi.kerala.gov.in/vision-mission/">Vision</a></li>
                                                 <li id="menu-item-434" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-434"><a href="https://vimukthi.kerala.gov.in/mission-structure/">Mission Structure</a></li>
                                             </ul>
                                         </li>
                                         <li id="menu-item-600" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-600"><a href="https://vimukthi.kerala.gov.in/programmes/">Programmes</a></li>
-                                        <li id="menu-item-314" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-314"><a href="index.html#">Services</a>
+                                        <li id="menu-item-314" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-314"><a href="#">Services</a>
                                             <ul className="sub-menu">
                                                 <li id="menu-item-448" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-448"><a href="https://vimukthi.kerala.gov.in/counselling-centres/">Counselling centres</a></li>
                                                 <li id="menu-item-454" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-454"><a href="https://vimukthi.kerala.gov.in/de-addiction-centres/">De-addiction centres</a></li>
@@ -94,7 +94,7 @@ export default function Home() {
                                                 <li id="menu-item-427" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-427"><a href="https://vimukthi.kerala.gov.in/ngos/">NGO’s</a></li>
                                             </ul>
                                         </li>
-                                        <li id="menu-item-315" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-315"><a href="index.html#">Resource</a>
+                                        <li id="menu-item-315" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-315"><a href="#">Resource</a>
                                             <ul className="sub-menu">
                                                 <li id="menu-item-78" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-78"><a href="index.html#">Circular</a></li>
                                                 <li id="menu-item-674" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-674"><a href="https://vimukthi.kerala.gov.in/searc/">Hand Books</a></li>
@@ -102,13 +102,13 @@ export default function Home() {
                                                 <li id="menu-item-546" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-546"><a href="https://vimukthi.kerala.gov.in/ppts/">PPT’S</a></li>
                                             </ul>
                                         </li>
-                                        <li id="menu-item-513" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-513"><a href="index.html#">Gallery</a>
+                                        <li id="menu-item-513" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-513"><a href="#">Gallery</a>
                                             <ul className="sub-menu">
                                                 <li id="menu-item-1431" className="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1431"><a href="https://vimukthi.kerala.gov.in/category/photo-gallery/">photo gallery</a></li>
                                                 <li id="menu-item-1311" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1311"><a href="https://vimukthi.kerala.gov.in/media-scan/">Awareness Posters And Troll</a></li>
                                             </ul>
                                         </li>
-                                        <li id="menu-item-79" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-79"><a href="index.html#">Contact Us</a>
+                                        <li id="menu-item-79" className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-79"><a href="#">Contact Us</a>
                                             <ul className="sub-menu">
                                                 <li id="menu-item-423" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-423"><a href="https://vimukthi.kerala.gov.in/ceo-jec/">CEO &amp; JEC</a></li>
                                                 <li id="menu-item-422" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-422"><a href="https://vimukthi.kerala.gov.in/district-offices/">District Offices</a></li>
