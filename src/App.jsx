@@ -12,6 +12,9 @@ import Quiz from "./Quiz";
 import Result from "./Result";
 import Pdf from "./Pdf"
 import Home from "./Home";
+import Goal from "./Goal";
+import GoalResult from "./GoalResult";
+import GoalPdf from "./GoalPdf"
 
 function StartPage() {
   const [count, setCount] = useState(0);
@@ -49,6 +52,18 @@ const router = createBrowserRouter([
         path:"/Pdf",
         element: <Pdf />,
       },
+      {
+        path: "/goal",
+        element: <Goal />,
+      },
+      {
+        path: "/goal/result",
+        element: <GoalResult />,
+      },
+      {
+        path:"/GoalPdf",
+        element:<GoalPdf/>
+      }
     ],
   },
 ]);
