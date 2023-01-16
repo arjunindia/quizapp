@@ -5,6 +5,12 @@ export default function Pdf() {
       const queryString = window.location.search;
       const urlParams = new URLSearchParams(queryString);
         (async () => {
+          const font = {
+            serif: {
+              data: await fetch('/Charm-Regular.ttf').then((res) => res.arrayBuffer()),
+              fallback:true,
+            },
+          }
           const template = {
             "schemas": [
               {
@@ -29,11 +35,11 @@ export default function Pdf() {
             const inputs = [
             {
               "field1": urlParams.get('name'),
-              "field2": urlParams.get('marks')
+              "field2": "10"
             }
           ];
           
-            const pdf = await generate({ template, inputs });
+            const pdf = await generate({ template, inputs,options:{font} });
           
             // Node.js
             // fs.writeFileSync(path.join(__dirname, 'test.pdf'), pdf);
