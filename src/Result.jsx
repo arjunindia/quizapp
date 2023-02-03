@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Text, Box } from "@chakra-ui/react";
-import emailjs from "@emailjs/browser";
+
 export default function result() {
   const [loaded, setLoaded] = useState(false);
   function blobToBase64(blob) {
@@ -12,23 +12,8 @@ export default function result() {
   }
   
   function handleEmail() {
-        emailjs.init("QNlZXxQmXtYkYEXaa");
-        var templateParams = {
-          name: localStorage.getItem("name"),
-          message: `${window.location.origin}/Pdf?name=${localStorage.getItem("name")}&marks=${localStorage.getItem("marks")}`,
-          reply: localStorage.getItem("email"),
-        };
-        emailjs
-          .send("service_6g1oyon", "template_xm6brfq", templateParams)
-          .then(
-            function (response) {
-              console.log("SUCCESS!", response.status, response.text);
-              setLoaded(true);
-            },
-            function (error) {
-              console.log("FAILED...", error);
-            }
-          );
+    window.open(`/Pdf?name=${localStorage.getItem("name")}`);
+    setLoaded(true);
   }
 
   useEffect(() => {
@@ -63,7 +48,7 @@ export default function result() {
       <Text fontSize="2xl">Result</Text>
       <Text fontSize="xl">Your score is: {localStorage.getItem("marks")}</Text>
         {Number(localStorage.getItem("marks")) > 4 ? (<>
-          <Text fontSize="xl" maxW="600px" w="90vw" textAlign="center">Check your email for the certificate!</Text>
+          <Text fontSize="xl" maxW="600px" w="90vw" textAlign="center">Here is your certificate!</Text>
         </>
       ) : (
         <Text fontSize="xl">

@@ -46,7 +46,13 @@ export default function Pdf() {
           
             // Browser
             const blob = new Blob([pdf.buffer], { type: 'application/pdf' });
-            window.location = (URL.createObjectURL(blob));
+             
+            var link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'Vimukthi_Certificate.pdf';
+            link.dispatchEvent(new MouseEvent('click'));
+            window.close();
+            
           })();
     })
     return (
