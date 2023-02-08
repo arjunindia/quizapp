@@ -1,5 +1,6 @@
 .App{
   /* padding-left: 20px; */
+  background:linear-gradient(to bottom right,#24bae767,#fff)
 }
 .left-content,.left-content>*{
   display: flex;

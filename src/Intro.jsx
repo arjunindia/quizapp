@@ -26,7 +26,7 @@ import {
       <Box
         maxW={600}
         w={"90vw"}
-        minH={"100vh"}
+        minH={"calc(100vh - 70px)"}
         mx={"auto"}
         display={"flex"}
         flexDirection={"column"}

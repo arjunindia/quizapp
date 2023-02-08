@@ -3,7 +3,8 @@ import "./App.css";
 import {
   createBrowserRouter,
   RouterProvider,
-  Outlet
+  Outlet,
+  useLocation
 } from "react-router-dom";
 
 import Intro from "./Intro";
@@ -15,14 +16,30 @@ import Home from "./Home";
 import Goal from "./Goal";
 import GoalResult from "./GoalResult";
 import GoalPdf from "./GoalPdf"
+import { Divider, Container } from '@chakra-ui/react'
+
 
 function StartPage() {
   const [count, setCount] = useState(0);
-
+  const location = useLocation();
   return (
     <div className="App">
+
       <Outlet />
+      {/* display footer only if the current route is not / */}
+      {location.pathname !== "/" && (
+        <>
+          <Divider colorScheme="blackAlpha" />
+
+          <footer>
+            <Container p="20px 0" >
+              <p style={{ display: "flex", gap: "10px", textAlign: "center", justifyContent: "center" }}>Developed by <img src="https://ucek.in/images/nssLogo.png" alt="NSS Logo" style={{ height: "25px", display: "inline-flex", alignSelf: "center" }} /> NATIONAL Service Scheme UCEK </p>
+            </Container>
+          </footer>
+        </>
+      )}
     </div>
+
   );
 }
 

@@ -107,7 +107,7 @@ function Choice({ question, index, value, setIndex,options,isError }) {
           <Radio value="2">Second</Radio>
           <Radio value="3">Third</Radio> */}
             {options.map((val, index) => (
-              <Radio key={index} value={`${index + 1}`}>
+              <Radio border="0.5px solid #aaa!important" key={index} value={`${index + 1}`}>
                 {val}
               </Radio>
             ))}

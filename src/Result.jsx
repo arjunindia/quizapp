@@ -41,7 +41,7 @@ export default function result() {
   return (
     loaded ? (
     <Box
-      minH={"100vh"}
+      minH={"calc(100vh - 70px)"}
       display={"flex"}
       justifyContent="center"
       alignItems={"center"}
