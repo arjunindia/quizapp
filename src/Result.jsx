@@ -12,10 +12,24 @@ export default function result() {
       reader.readAsDataURL(blob);
     });
   }
-  
+
   function handleEmail() {
 
     setLoaded(true);
+    fetch("https://clear-goat-97.deno.dev/quiz", {
+      method: "POST",
+      body: JSON.stringify({
+        name: localStorage.getItem("name"),
+        email: localStorage.getItem("email")
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      }
+    })
+      .then((res) => res.text())
+      .then((data) => {
+        console.log(data);
+      });
   }
 
   useEffect(() => {
@@ -37,18 +51,18 @@ export default function result() {
     return () => {
       isApiSubscribed = false;
     }
-  },[]);
+  }, []);
   return (
     loaded ? (
-    <Box
-      minH={"calc(100vh - 70px)"}
-      display={"flex"}
-      justifyContent="center"
-      alignItems={"center"}
-      flexDirection="column"
-    >
-      <Text fontSize="2xl">Result</Text>
-      <Text fontSize="xl">Your score is: {localStorage.getItem("marks")}</Text>
+      <Box
+        minH={"calc(100vh - 70px)"}
+        display={"flex"}
+        justifyContent="center"
+        alignItems={"center"}
+        flexDirection="column"
+      >
+        <Text fontSize="2xl">Result</Text>
+        <Text fontSize="xl">Your score is: {localStorage.getItem("marks")}</Text>
         {Number(localStorage.getItem("marks")) > 4 ? (<>
           <Text fontSize="xl" maxW="600px" w="90vw" textAlign="center">Here is your certificate!</Text>
           <Flex gap="5" p="5">
@@ -56,15 +70,15 @@ export default function result() {
             <Button onClick={() => navigate("/")}>Exit</Button>
           </Flex>
         </>
-      ) : (
-            <>
-        <Text fontSize="xl">
-          You need to score at least 5 marks to get the certificate!
-        </Text>
-              <Button mt="10" onClick={() => navigate("/quiz")}>Retry</Button>
-            </>
-      )}
-    </Box>
+        ) : (
+          <>
+            <Text fontSize="xl">
+              You need to score at least 5 marks to get the certificate!
+            </Text>
+            <Button mt="10" onClick={() => navigate("/quiz")}>Retry</Button>
+          </>
+        )}
+      </Box>
     ) : (<Text minH={"100vh"}
       display={"flex"}
       justifyContent="center"

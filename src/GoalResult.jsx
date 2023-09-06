@@ -13,9 +13,25 @@ export default function result() {
       reader.readAsDataURL(blob);
     });
   }
-  
+
   function handleEmail() {
     setLoaded(true);
+    fetch("https://clear-goat-97.deno.dev/goal", {
+      method: "POST",
+      body: JSON.stringify({
+        name: localStorage.getItem("name"),
+        email: localStorage.getItem("email"),
+        location: localStorage.getItem("location"),
+        institution: localStorage.getItem("InstName"),
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      }
+    })
+      .then((res) => res.text())
+      .then((data) => {
+        console.log(data);
+      });
   }
 
   useEffect(() => {
@@ -27,35 +43,34 @@ export default function result() {
     ) {
       navigate("/");
     }
-    if (Number(localStorage.getItem("marks")) > 4) {
-      if (isApiSubscribed) {
-        handleEmail();
-      }
+    if (isApiSubscribed) {
+      handleEmail();
+
     } else {
       setLoaded(true);
     }
     return () => {
       isApiSubscribed = false;
     }
-  },[]);
+  }, []);
   return (
     loaded ? (
-    <Box
-      minH={"calc(100vh - 70px)"}
-      display={"flex"}
-      justifyContent="center"
-      alignItems={"center"}
-      flexDirection="column"
-    >
+      <Box
+        minH={"calc(100vh - 70px)"}
+        display={"flex"}
+        justifyContent="center"
+        alignItems={"center"}
+        flexDirection="column"
+      >
 
- 
-          <Text fontSize="xl" maxW="600px" w="90vw" textAlign="center">Here is your certificate!</Text>
-          <Flex gap="5" p="5">
-            <Button onClick={() => window.open(`/GoalPdf?name=${localStorage.getItem("name")}&InstName=${localStorage.getItem("InstName")}&location=${localStorage.getItem("location")}`)}>Download</Button>
-            <Button onClick={() => navigate("/")}>Exit</Button>
-          </Flex>
 
-    </Box>
+        <Text fontSize="xl" maxW="600px" w="90vw" textAlign="center">Here is your certificate!</Text>
+        <Flex gap="5" p="5">
+          <Button onClick={() => window.open(`/GoalPdf?name=${localStorage.getItem("name")}&InstName=${localStorage.getItem("InstName")}&location=${localStorage.getItem("location")}`)}>Download</Button>
+          <Button onClick={() => navigate("/")}>Exit</Button>
+        </Flex>
+
+      </Box>
     ) : (<Text minH={"100vh"}
       display={"flex"}
       justifyContent="center"
