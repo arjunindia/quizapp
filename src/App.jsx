@@ -17,6 +17,8 @@ import Goal from "./Goal";
 import GoalResult from "./GoalResult";
 import GoalPdf from "./GoalPdf"
 import { Divider, Container } from '@chakra-ui/react'
+import Loginform from "./loginform";
+import Database from "./database";
 
 
 function StartPage() {
@@ -80,6 +82,14 @@ const router = createBrowserRouter([
       {
         path:"/GoalPdf",
         element:<GoalPdf/>
+      },
+      {
+        path:"/loginform",
+        element:<Loginform/>
+      },
+      {
+        path:"/database",
+        element:<Database/>
       }
     ],
   },

@@ -333,6 +333,10 @@ export default function Home() {
                                         style={{"color": "#ff0000"}}><Link style={{"color": "#ff0000"}} to="goal"><span
                                         style={{"fontSize": "12pt"}}>Vimukthi Goal Challenge</span></Link></span></em></strong></span>
                                     </p>
+                                    <p><span style={{"fontSize": "14pt"}}><strong><em><span
+                                        style={{"color": "#ff0000"}}><Link style={{"color": "#ff0000"}} to="loginform"><span
+                                        style={{"fontSize": "12pt"}}>Database</span></Link></span></em></strong></span>
+                                    </p>
                                 </div>
                                 {/* .entry-content */}
                             </article>
